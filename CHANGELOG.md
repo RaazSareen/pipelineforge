@@ -3,14 +3,28 @@
 All notable changes to PipelineForge will be documented here.
 
 ---
+# v0.3.0 - 2026-05-13
 
-## [v0.2.0] - 2026-05-13
+## Added
 
-### Added
+- Centralized framework exception hierarchy
+- Custom PipelineForge error system
+- Data validation exception integration
+- Exception inheritance tests
+
+# v0.2.0 - 2026-05-13
+
+## Added
+
 - Centralized framework path management system
 - Core filesystem abstraction layer
 - Automatic project directory creation utility
 - Path validation tests
+
+# v0.1.0 - 2026-05-12
+
+## Added
+
 - Config-driven architecture
 - Centralized TOML configuration loader
 - Logging utility system
@@ -20,18 +34,9 @@ All notable changes to PipelineForge will be documented here.
 - Unit testing structure
 - Ruff + pre-commit integration
 
-### Improved
+## Improved
+
 - Project structure standardization
 - CI workflow reliability
 
 ---
-
-## [0.1.0] - 2026-05-12
-
-### Added
-- Initial framework architecture
-- uv-based environment management
-- pytest setup
-- Ruff linting
-- GitHub Actions CI
-- Base package structure

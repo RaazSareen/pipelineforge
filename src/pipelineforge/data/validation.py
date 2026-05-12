@@ -1,12 +1,16 @@
 """
-Module: validation.py (PipelineForge Data Validation Module)
+Module: validation.py
 Project: PipelineForge
-Version: 0.1.0
+Version: 0.3.0
 Last Updated: 2026-05-13
-Purpose: Dataframe validation utilities.
+
+Purpose:
+    Dataframe validation utilities.
 """
 
 import pandas as pd
+
+from pipelineforge.exceptions import DataValidationError
 
 
 def validate_dataframe(
@@ -29,13 +33,16 @@ def validate_dataframe(
     bool
         Validation result.
     """
+
     if dataframe.empty:
-        raise ValueError("Dataframe is empty.")
+        raise DataValidationError("Input dataframe is empty.")
 
     if required_columns:
         missing_columns = [column for column in required_columns if column not in dataframe.columns]
 
         if missing_columns:
-            raise ValueError(f"Missing required columns: {missing_columns}")
+            raise DataValidationError(
+                f"Missing required columns: {missing_columns}",
+            )
 
     return True
