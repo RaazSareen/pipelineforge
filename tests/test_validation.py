@@ -1,6 +1,5 @@
 import pandas as pd
 import pytest
-
 from pipelineforge.data.validation import validate_columns
 
 
