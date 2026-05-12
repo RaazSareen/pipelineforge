@@ -47,3 +47,8 @@ uv sync --extra dev
 uv run ruff check .
 uv run pytest
 ```
+## Versioning
+
+PipelineForge follows Semantic Versioning (SemVer).
+
+Current Version: `0.2.0`

@@ -1,12 +1,21 @@
+from pipelineforge.config.settings import load_config
 from pipelineforge.utils.logger import get_logger
 
 logger = get_logger(__name__)
 
 
 def run_training_pipeline() -> None:
-    logger.info("Starting training pipeline")
+    """
+    Execute training workflow.
+    """
+    config = load_config()
 
-    logger.info("Pipeline completed successfully")
+    logger.info(
+        "Running training pipeline for project: %s",
+        config["project"]["name"],
+    )
+
+    logger.info("Pipeline execution completed.")
 
 
 if __name__ == "__main__":

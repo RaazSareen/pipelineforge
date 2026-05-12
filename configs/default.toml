@@ -1,6 +1,13 @@
+# ==================================================
+# PipelineForge Configuration
+# Version: 1.0.0
+# Last Updated: 2026-05-13
+# ==================================================
+
 [project]
 name = "pipelineforge"
 environment = "development"
+version = "0.1.0"
 
 [data]
 raw_data_dir = "data/raw"
@@ -10,3 +17,10 @@ processed_data_dir = "data/processed"
 figures_dir = "outputs/figures"
 models_dir = "outputs/models"
 reports_dir = "outputs/reports"
+
+[model]
+random_state = 42
+test_size = 0.2
+
+[logging]
+level = "INFO"
