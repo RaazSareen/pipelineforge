@@ -32,7 +32,7 @@ dependencies = [
 ]
 
 [project.urls]
-Repository = "https://github.com/RaazRishi/pipelineforge"
+Repository = "https://github.com/RaazSareen/pipelineforge"
 
 [project.optional-dependencies]
 
