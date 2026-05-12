@@ -1,0 +1,94 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pipelineforge"
+version = "0.1.0"
+description = "A modular, production-grade Data Science framework and project bootstrapper"
+readme = "README.md"
+requires-python = ">=3.12,<3.14"
+
+authors = [
+    { name = "Raaz Rishi" }
+]
+
+license = { text = "MIT" }
+
+keywords = ["data-science", "mlops", "pipeline", "automation", "bootstrap"]
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: Microsoft :: Windows"
+]
+
+dependencies = [
+    "numpy>=2.3.0",
+    "pandas>=2.3.0",
+    "matplotlib>=3.10.0",
+    "scikit-learn>=1.7.0"
+]
+
+[project.urls]
+Repository = "https://github.com/RaazRishi/pipelineforge"
+
+[project.optional-dependencies]
+
+dev = [
+    "pytest>=8.0.0",
+    "ruff>=0.12.0",
+    "pre-commit>=4.0.0"
+]
+
+ml = [
+    "xgboost>=3.0.0",
+    "lightgbm>=4.6.0"
+]
+
+dl = [
+    "torch",
+    "torchvision"
+]
+
+eda = [
+    "seaborn>=0.13.0",
+    "jupyter>=1.1.0"
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+exclude = [
+    ".venv",
+    "build",
+    "dist"
+]
+
+[tool.ruff.lint]
+select  = ["E", "F", "I"]
+fixable = ["ALL"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending  = "auto"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.hatch.build]
+include = [
+    "src/**/*.py",
+    "README.md"
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/pipelineforge"]
+
+[tool.hatch.build.targets.wheel.sources]
+"src" = ""
+
