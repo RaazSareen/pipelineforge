@@ -1,0 +1,12 @@
+[project]
+name = "pipelineforge"
+environment = "development"
+
+[data]
+raw_data_dir = "data/raw"
+processed_data_dir = "data/processed"
+
+[outputs]
+figures_dir = "outputs/figures"
+models_dir = "outputs/models"
+reports_dir = "outputs/reports"

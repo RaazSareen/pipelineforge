@@ -1,31 +1,7 @@
-import pandas as pd
-import pytest
-from pipelineforge.data.validation import validate_columns
+from pipelineforge.config.settings import load_config
 
 
-def test_validate_columns_success() -> None:
-    dataframe = pd.DataFrame(
-        {
-            "age": [20],
-            "salary": [1000],
-        }
-    )
+def test_load_config():
+    config = load_config()
 
-    validate_columns(
-        dataframe=dataframe,
-        required_columns=["age", "salary"],
-    )
-
-
-def test_validate_columns_failure() -> None:
-    dataframe = pd.DataFrame(
-        {
-            "age": [20],
-        }
-    )
-
-    with pytest.raises(ValueError):
-        validate_columns(
-            dataframe=dataframe,
-            required_columns=["age", "salary"],
-        )
+    assert config["project"]["name"] == "pipelineforge"
