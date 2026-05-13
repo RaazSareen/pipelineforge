@@ -3,6 +3,16 @@
 All notable changes to PipelineForge will be documented here.
 
 ---
+# v0.4.0
+
+## Added
+
+- Typed configuration schema system
+- TOML configuration loader
+- Structured application configuration models
+- Configuration validation layer
+- Configuration unit tests
+
 # v0.3.0 - 2026-05-13
 
 ## Added

@@ -7,20 +7,22 @@
 [project]
 name = "pipelineforge"
 environment = "development"
-version = "0.1.0"
+version = "0.4.0"
 
 [data]
-raw_data_dir = "data/raw"
-processed_data_dir = "data/processed"
+raw_data_path = "data/raw/dataset.csv"
+processed_data_path = "data/processed/clean.csv"
+target_column = "target"
 
 [outputs]
 figures_dir = "outputs/figures"
 models_dir = "outputs/models"
 reports_dir = "outputs/reports"
 
-[model]
-random_state = 42
+[training]
 test_size = 0.2
+random_state = 42
+model_type = "random_forest"
 
 [logging]
 level = "INFO"
