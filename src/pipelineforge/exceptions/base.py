@@ -1,6 +1,14 @@
 """
-PipelineForge Base Exceptions
-Version: 0.3.0
+PipelineForge Module
+
+Version:
+    0.3.0
+
+Updated:
+    2026-05-13
+
+Purpose:
+    Base framework exception hierarchy.
 """
 
 

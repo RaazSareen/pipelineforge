@@ -3,7 +3,15 @@
 All notable changes to PipelineForge will be documented here.
 
 ---
-# v0.4.0
+## [0.4.0] - 2026-05-13
+
+### Added
+- Centralized framework logging system
+- File + console logging handlers
+- Reusable logger factory
+- Logging infrastructure tests
+
+# v0.4.0 - 2026-05-13
 
 ## Added
 

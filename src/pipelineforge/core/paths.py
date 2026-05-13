@@ -1,46 +1,65 @@
 """
-PipelineForge Path Management System
-Version: 0.2.0
+PipelineForge Module
+
+Version:
+    0.4.0
+
+Updated:
+    2026-05-13
+
+Purpose:
+    Centralized project path management.
 """
+
+from __future__ import annotations
 
 from pathlib import Path
 
-PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
-CONFIGS_DIR = PROJECT_ROOT / "configs"
-
-DATA_DIR = PROJECT_ROOT / "data"
-RAW_DATA_DIR = DATA_DIR / "raw"
-PROCESSED_DATA_DIR = DATA_DIR / "processed"
-
-OUTPUTS_DIR = PROJECT_ROOT / "outputs"
-FIGURES_DIR = OUTPUTS_DIR / "figures"
-MODELS_DIR = OUTPUTS_DIR / "models"
-REPORTS_DIR = OUTPUTS_DIR / "reports"
-
-NOTEBOOKS_DIR = PROJECT_ROOT / "notebooks"
-
-TESTS_DIR = PROJECT_ROOT / "tests"
-
-DOCS_DIR = PROJECT_ROOT / "docs"
-
-
-def create_project_directories() -> None:
+class ProjectPaths:
     """
-    Create required framework directories.
+    Centralized framework path registry.
     """
 
-    directories = [
-        CONFIGS_DIR,
-        RAW_DATA_DIR,
-        PROCESSED_DATA_DIR,
-        FIGURES_DIR,
-        MODELS_DIR,
-        REPORTS_DIR,
-        NOTEBOOKS_DIR,
-        TESTS_DIR,
-        DOCS_DIR,
-    ]
+    root = Path(__file__).resolve().parents[3]
 
-    for directory in directories:
-        directory.mkdir(parents=True, exist_ok=True)
+    configs = root / "configs"
+
+    data = root / "data"
+    raw_data = data / "raw"
+    processed_data = data / "processed"
+
+    outputs = root / "outputs"
+    figures = outputs / "figures"
+    models = outputs / "models"
+    reports = outputs / "reports"
+
+    notebooks = root / "notebooks"
+
+    tests = root / "tests"
+
+    docs = root / "docs"
+
+    logs = root / "logs"
+
+    @classmethod
+    def create_project_directories(cls) -> None:
+        """
+        Create required framework directories.
+        """
+
+        directories = [
+            cls.configs,
+            cls.raw_data,
+            cls.processed_data,
+            cls.figures,
+            cls.models,
+            cls.reports,
+            cls.notebooks,
+            cls.tests,
+            cls.docs,
+            cls.logs,
+        ]
+
+        for directory in directories:
+            directory.mkdir(parents=True, exist_ok=True)

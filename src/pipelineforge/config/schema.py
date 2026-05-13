@@ -1,6 +1,14 @@
 """
-PipelineForge Configuration Schemas
-Version: 0.4.0
+PipelineForge Module
+
+Version:
+    0.4.0
+
+Updated:
+    2026-05-13
+
+Purpose:
+    Typed configuration schema definitions.
 """
 
 from dataclasses import dataclass
