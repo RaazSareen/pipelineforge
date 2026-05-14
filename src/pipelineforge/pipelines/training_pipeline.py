@@ -1,21 +1,27 @@
-from pipelineforge.config.settings import load_config
-from pipelineforge.utils.logger import get_logger
+from pathlib import Path
 
-logger = get_logger(__name__)
+from pipelineforge.config.settings import load_config
+from pipelineforge.core.logging import setup_logger
+
+logger = setup_logger(__name__)
 
 
 def run_training_pipeline() -> None:
     """
     Execute training workflow.
     """
-    config = load_config()
+
+    config_path = Path("configs/default.toml")
+
+    config = load_config(config_path)
 
     logger.info(
-        "Running training pipeline for project: %s",
-        config["project"]["name"],
+        "Running training pipeline | model=%s | target=%s",
+        config.training.model_type,
+        config.data.target_column,
     )
 
-    logger.info("Pipeline execution completed.")
+    logger.info("Training pipeline execution completed.")
 
 
 if __name__ == "__main__":

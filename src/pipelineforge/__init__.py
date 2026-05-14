@@ -1,6 +1,11 @@
 """
 PipelineForge
-Version: 0.2.0
+A modular, production-grade Data Science engineering framework.
 """
 
-__version__ = "0.4.0"
+from importlib.metadata import PackageNotFoundError, version
+
+try:
+    __version__ = version("pipelineforge")
+except PackageNotFoundError:
+    __version__ = "unknown"

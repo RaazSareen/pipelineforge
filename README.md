@@ -51,4 +51,4 @@ uv run pytest
 
 PipelineForge follows Semantic Versioning (SemVer).
 
-Current Version: `0.2.0`
+Current Version: `0.5.0`

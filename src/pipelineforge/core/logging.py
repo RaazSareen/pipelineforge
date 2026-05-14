@@ -39,6 +39,8 @@ def setup_logger(
 
     logger.setLevel(level)
 
+    logger.propagate = False
+
     formatter = Formatter(LOG_FORMAT)
 
     log_path: Path = ProjectPaths.root / "logs" / log_file

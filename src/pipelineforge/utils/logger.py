@@ -1,13 +1,16 @@
-import logging
+"""
+PipelineForge Module
 
+Version:
+    0.5.0
 
-def get_logger(name: str) -> logging.Logger:
-    """
-    Create configured logger instance.
-    """
-    logging.basicConfig(
-        level=logging.INFO,
-        format="%(asctime)s | %(levelname)s | %(name)s | %(message)s",
-    )
+Updated:
+    2026-05-14
 
-    return logging.getLogger(name)
+Purpose:
+    Logger utility — thin wrapper over core logging.
+"""
+
+from pipelineforge.core.logging import setup_logger
+
+__all__ = ["setup_logger"]
