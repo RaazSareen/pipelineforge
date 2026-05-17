@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "pipelineforge"
-version = "0.5.0"
+version = "0.6.0"
 description = "A modular, production-grade Data Science framework and project bootstrapper"
 readme = "README.md"
 requires-python = ">=3.12,<3.14"
@@ -41,6 +41,10 @@ dev = [
     "pytest>=8.0.0",
     "ruff>=0.12.0",
     "pre-commit>=4.0.0"
+]
+
+stats = [
+    "statsmodels>=0.14.0",
 ]
 
 ml = [

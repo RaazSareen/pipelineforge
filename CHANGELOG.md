@@ -5,6 +5,20 @@ Format follows [Keep a Changelog](https://keepachangelog.com/).
 
 ---
 
+## [0.6.0] - 2026-05-16
+
+### Added
+- Preprocessing layer: `cleaner.py`, `imputer.py`, `encoder.py`, `scaler.py`, `selector.py`
+- Cleaning: drop missing rows (with threshold), drop duplicates, strip whitespace, rename columns, cast types
+- Imputation: mean, median, mode, constant strategies
+- Encoding: one-hot, label encoding
+- Scaling: min-max, standard scaling
+- Selection: drop columns, select columns, drop low variance
+- Full test coverage: 58 new tests across preprocessing modules
+- Pandas 2.x compatibility fixes for string dtype detection
+
+---
+
 ## [0.5.0] - 2026-05-14
 
 ### Added
