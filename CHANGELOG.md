@@ -5,6 +5,42 @@ Format follows [Keep a Changelog](https://keepachangelog.com/).
 
 ---
 
+## [0.9.0] - 2026-05-19
+
+### Added
+- Evaluation layer: `classification.py`, `regression.py`, `reporter.py`
+- Classification metrics: accuracy, precision, recall, f1, roc_auc, confusion_matrix, classification_report
+- Regression metrics: mae, mse, rmse, r2, mape
+- Metric report formatting via `format_metrics_report` and `print_metrics_report`
+- ROC AUC nan guard for single-class y_true
+- Full test coverage: 47 new tests across evaluation modules
+
+---
+
+## [0.8.0] - 2026-05-19
+
+### Added
+- Models layer: `classifier.py`, `regressor.py`
+- Classifier registry: random_forest, logistic_regression, gradient_boosting
+- Regressor registry: random_forest, linear_regression, gradient_boosting, ridge
+- `build_classifier`, `train_classifier`, `build_regressor`, `train_regressor`
+- Accepts pre-split data — splitting delegated to model_selection layer
+- Full test coverage: 27 new tests across model modules
+
+---
+
+## [0.7.0] - 2026-05-19
+
+### Added
+- Model selection layer: `model_selection/splitter.py`
+- Splitting functions: train_test_split_data, stratified_split, kfold_split, timeseries_split
+- Config-compatible: accepts parameters directly, no config loading
+- Exception mapping: DataValidationError for data issues, ConfigurationError for invalid parameters
+- Time-series order preservation validated in tests
+- Full test coverage: 26 new tests
+
+---
+
 ## [0.6.0] - 2026-05-16
 
 ### Added
