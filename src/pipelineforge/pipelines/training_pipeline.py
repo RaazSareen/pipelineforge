@@ -1,28 +1,36 @@
-from pathlib import Path
+"""
+Deprecated compatibility wrapper.
 
-from pipelineforge.config.settings import load_config
-from pipelineforge.core.logging import setup_logger
+Use instead:
+    pipelineforge.orchestration.classification_pipeline
+    pipelineforge.orchestration.regression_pipeline
 
-logger = setup_logger(__name__)
+This module will be removed in v1.0.
+"""
+
+from __future__ import annotations
+
+import warnings
 
 
-def run_training_pipeline() -> None:
+def run_training_pipeline(*args: object, **kwargs: object) -> None:
     """
-    Execute training workflow.
+    Deprecated. Use orchestration pipelines instead.
+
+    Raises
+    ------
+    NotImplementedError
     """
-
-    config_path = Path("configs/default.toml")
-
-    config = load_config(config_path)
-
-    logger.info(
-        "Running training pipeline | model=%s | target=%s",
-        config.training.model_type,
-        config.data.target_column,
+    warnings.warn(
+        (
+            "pipelineforge.pipelines.training_pipeline "
+            "is deprecated and will be removed in v1.0. "
+            "Use pipelineforge.orchestration instead."
+        ),
+        DeprecationWarning,
+        stacklevel=2,
     )
-
-    logger.info("Training pipeline execution completed.")
-
-
-if __name__ == "__main__":
-    run_training_pipeline()
+    raise NotImplementedError(
+        "Use pipelineforge.orchestration.classification_pipeline "
+        "or pipelineforge.orchestration.regression_pipeline instead."
+    )
