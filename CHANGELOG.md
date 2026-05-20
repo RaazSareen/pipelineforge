@@ -5,6 +5,20 @@ Format follows [Keep a Changelog](https://keepachangelog.com/).
 
 ---
 
+## [0.10.0] - 2026-05-19
+
+### Added
+- Visualization layer: `plots.py`, `style.py`
+- Plot functions: distribution, correlation heatmap, feature importance,
+  confusion matrix, residuals
+- All functions return `matplotlib.axes.Axes` for composability
+- Optional `save_path` parameter on all plot functions
+- Shared style constants: DEFAULT_FIGSIZE, DEFAULT_DPI, DEFAULT_PALETTE, DEFAULT_COLOR
+- Full test coverage: 23 new tests
+- Tests use `matplotlib.use("Agg")` for headless execution
+
+---
+
 ## [0.9.0] - 2026-05-19
 
 ### Added
